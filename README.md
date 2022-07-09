@@ -4,7 +4,7 @@ Started as Codecademy project and extending to include more functionality and ow
 
 ---
 
-# WIP
+## WIP
 
 ---
 
