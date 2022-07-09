@@ -1,12 +1,10 @@
 # React Appointment Planner
 
-Started as Codecademy project and extending to include more functionality and own design.
 
----
+Started as Codecademy project and extending to include more functionality and own design.
 
 ## WIP
 
----
 
 * Future additions
     * Add delete contact and delete appointment buttons
