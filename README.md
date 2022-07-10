@@ -5,7 +5,7 @@ Started as Codecademy project and extending to include more functionality and ow
 
 ## WIP
 
-    * [React-Planner-App](https://DanielStewardson.github.io/React-Appointment-Planner)
+[React-Planner-App](https://DanielStewardson.github.io/React-Appointment-Planner)
 
 ---
 
