@@ -1,6 +1,38 @@
 #root {
-  padding: 30px;
   font-family: "Open Sans", sans-serif;
+}
+
+/* ------------------ Resets ------------------------ */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+/* -------------------------- Main positioning ----------------------- */
+
+main {
+  margin: 0 auto;
+  width: 80%;
 }
 
 nav > a {
@@ -17,9 +49,12 @@ nav > a.active {
 }
 
 nav {
-  padding-bottom: 20px;
+  display: flex;
+  padding: 10px;
+  padding-left: 20px;
   border-bottom: 1px solid #979797;
   margin-bottom: 20px;
+  background-color: #03a8d8;
 }
 
 h2 {
@@ -28,9 +63,6 @@ h2 {
   color: #000000;
   margin: 0;
   margin-bottom: 18px;
-}
-
-section {
 }
 
 hr {
@@ -47,7 +79,7 @@ input[type="submit"] {
   font-size: 14px;
   border: none;
   outline: none;
-  padding: 10px 0;
+  padding: 8px 0;
   width: 100%;
   font-family: "Open Sans", sans-serif;
   margin-top: 10px;
@@ -60,23 +92,36 @@ select {
   background: #ffffff;
   border: 1px solid #979797;
   border-radius: 4px;
-  padding: 7px 9.5px 9px 9.5px;
+  padding: 5px 9.5px 6px 7px;
   outline: none;
   width: 100%;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
 
-.tile {
+/* .tile {
   margin: 0;
   font-size: 14px;
   margin-bottom: 4px;
-}
+} */
 
 .tile.tile-title {
   font-weight: bold;
 }
 
 .tile-container {
-  margin-bottom: 20px;
+  position: relative;
+  /* margin-bottom: 20px; */
+}
+
+.delete-button {
+  position: absolute;
+  /* top: 0px; */
+  right: 5px;
+  background: none;
+  border: none;
+}
+
+.delete-button:hover {
+  cursor: pointer;
 }
