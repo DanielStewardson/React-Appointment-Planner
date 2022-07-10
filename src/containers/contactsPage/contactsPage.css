@@ -1,0 +1,43 @@
+.add-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --------------------- Contact Form --------------------- */
+
+.contact-form {
+    width: 20rem;
+}
+
+/* --------------------- Contact Tile Container --------------------- */
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+
+.contacts-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: blueviolet; */
+}
+
+.contacts-tiles .tile-container {
+    background-color: rgb(235, 235, 235);
+    margin: 5px;
+    padding: 1rem 8rem 1rem 1rem;
+    border-radius: 3px;
+    width: 20rem;
+}
+
+.contacts-tiles .tile-title {
+    padding: .3rem 0;
+    font-weight: bold;
+}
+
+.contacts-tiles .tile {
+    padding: .3rem 0;
+}

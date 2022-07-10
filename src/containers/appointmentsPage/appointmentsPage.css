@@ -1,0 +1,55 @@
+.add-appointment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------------------------- appointment-form-container ---------------------- */
+
+.appointment-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    /* background-color: aqua; */
+}
+/* --------------------- Appointment Form --------------------- */
+
+.appointment-form {
+    width: 20rem;
+}
+
+.appointment-text-area {
+    margin: 1rem 0;
+}
+/* --------------------- Appointment Tile Container --------------------- */
+
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+
+.appointments-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: blueviolet; */
+}
+
+.appointments-tiles .tile-container {
+    background-color: rgb(235, 235, 235);
+    margin: 5px;
+    padding: 1rem 8rem 1rem 1rem;
+    border-radius: 3px;
+    width: 20rem;
+}
+
+.appointments-tiles .tile-title {
+    padding: .3rem 0;
+    font-weight: bold;
+}
+
+.appointments-tiles .tile {
+    padding: .3rem 0;
+}
