@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ContactForm } from '../../components/contactForm/ContactForm';
 import { TileList } from "../../components/tileList/TileList";
+import './contactsPage.css';
 
-export const ContactsPage = ({ contacts, addContact }) => {
+export const ContactsPage = ({ contacts, addContact, handleDelete }) => {
   /*
   Define state variables for 
   contact info and duplicate check
@@ -63,14 +64,16 @@ export const ContactsPage = ({ contacts, addContact }) => {
 
   return (
     <div>
-      <section>
+      <section className='add-contact'>
         <h2>Add Contact</h2> 
         <ContactForm {...childProps} />
       </section>
       <hr />
-      <section>
+      <section className='contacts-list'>
         <h2>Contacts</h2>
-        <TileList data={contacts} emptyMessage={emptyMessage} />
+        <div className="contacts-tiles">
+          <TileList data={contacts} emptyMessage={emptyMessage} handleDelete={handleDelete} />
+        </div>
       </section>
     </div>
   );
