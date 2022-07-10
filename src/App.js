@@ -9,8 +9,79 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
- const [contacts, setContacts] = useState([]);
- const [appointments, setAppointments] = useState([]);
+ const [contacts, setContacts] = useState([
+  {
+    name: 'daniel s',
+    phone: '07868695495',
+    email: 'eamail@tmail.formail'
+  },
+  {
+    name: 'johnny boy',
+    phone: '09287654352',
+    email: 'johboy@hotters.lol'
+  },
+  {
+    name: 'Windsor Hallifax',
+    phone: '02938475647',
+    email: 'youknow@here.com'
+  },
+  {
+    name: 'johnny boy',
+    phone: '09287654352',
+    email: 'johboy@hotters.lol'
+  },
+  {
+    name: 'Windsor Hallifax',
+    phone: '02938475647',
+    email: 'youknow@here.com'
+  },
+  {
+    name: 'johnny boy',
+    phone: '09287654352',
+    email: 'johboy@hotters.lol'
+  },
+  {
+    name: 'Windsor Hallifax',
+    phone: '02938475647',
+    email: 'youknow@here.com'
+  },
+  {
+    name: 'johnny boy',
+    phone: '09287654352',
+    email: 'johboy@hotters.lol'
+  },
+  {
+    name: 'Windsor Hallifax',
+    phone: '02938475647',
+    email: 'youknow@here.com'
+  }
+ ]);
+ const [appointments, setAppointments] = useState([
+  {
+    title: 'Walk the dog',
+    contact: 'Windsor Hallifax',
+    date: '2022-06-21',
+    time: '06:20'
+  },
+  {
+    title: 'Walk the goldfish',
+    contact: 'johnny boy',
+    date: '2022-06-21',
+    time: '06:20'
+  },
+  {
+    title: 'Walk the iguana',
+    contact: 'johnny boy',
+    date: '2022-06-21',
+    time: '06:20'
+  },
+  {
+    title: 'Walk the panda bear',
+    contact: 'Windsor Hallifax',
+    date: '2022-06-21',
+    time: '06:20'
+  }
+ ]);
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -29,16 +100,26 @@ function App() {
     };
     setContacts(prev => [...prev, contact]);
   };
+  //Add key to all state for delete button?
 
-  const addAppointment = (title, contact, date, time) => {
+  const removeContact = (id) => {
+    setContacts(contacts.filter((contact, index) => index !== id));
+  }; 
+
+  const addAppointment = (title, contact, date, time, body) => {
     const appointment = {
       title: title,
       contact: contact,
       date: date,
-      time: time
+      time: time,
+      body: body
     };
     setAppointments(prev => [...prev, appointment]);
   };
+
+  const removeAppointment = (id) => {
+    setAppointments(appointments.filter((appointment, index) => index !== id));
+  }; 
 
 
   return (
@@ -58,11 +139,11 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
              {/* Add props to ContactsPage */}
-            <ContactsPage contacts={contacts} addContact={addContact} />
+            <ContactsPage contacts={contacts} addContact={addContact} handleDelete={removeContact} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage appointments={appointments} contacts={contacts} addAppointment={addAppointment} />
+            <AppointmentsPage appointments={appointments} contacts={contacts} addAppointment={addAppointment} handleDelete={removeAppointment} />
           </Route>
         </Switch>
       </main>
