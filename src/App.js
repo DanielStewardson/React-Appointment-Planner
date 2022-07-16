@@ -5,55 +5,61 @@ import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  /*
-  Define state variables for 
-  contacts and appointments 
-  */
+
  const [contacts, setContacts] = useState([
   {
     name: 'daniel s',
     phone: '07868695495',
-    email: 'eamail@tmail.formail'
+    email: 'eamail@tmail.formail',
+    notes: 'Need to add edit and delete buttons to the contact details component'
   },
   {
     name: 'johnny boy',
     phone: '09287654352',
-    email: 'johboy@hotters.lol'
+    email: 'johboy@hotters.lol',
+    notes: 'Also make the contact details component full screen modal under certain screen size'
   },
   {
     name: 'Windsor Hallifax',
     phone: '02938475647',
-    email: 'youknow@here.com'
+    email: 'youknow@here.com',
+    notes: 'Set a max character value for notes or this could get silly.'
   },
   {
-    name: 'johnny boy',
+    name: 'john bob',
     phone: '09287654352',
-    email: 'johboy@hotters.lol'
+    email: 'johboy@hotters.lol',
+    notes: 'Pretty solid guy. John Bob gets the job done'
   },
   {
-    name: 'Windsor Hallifax',
+    name: 'Hallifax Don',
     phone: '02938475647',
-    email: 'youknow@here.com'
+    email: 'youknow@here.com',
+    notes: 'I should set a max length for these notes'
   },
   {
-    name: 'johnny boy',
+    name: 'Troy duple',
     phone: '09287654352',
-    email: 'johboy@hotters.lol'
+    email: 'johboy@hotters.lol',
+    notes: 'Thinks hes great. Refers to himself as THE Troy from mytholigy. Not sure thats how you spell that but it does not matter at the moment.'
   },
   {
-    name: 'Windsor Hallifax',
+    name: 'Sarcy git',
     phone: '02938475647',
-    email: 'youknow@here.com'
+    email: 'youknow@here.com',
+    notes: 'Really sarcastic person. Only good in small doses..'
   },
   {
-    name: 'johnny boy',
+    name: 'Blane Parting',
     phone: '09287654352',
-    email: 'johboy@hotters.lol'
+    email: 'johboy@hotters.lol',
+    notes: 'Bit annoying'
   },
   {
-    name: 'Windsor Hallifax',
+    name: 'Snoopy',
     phone: '02938475647',
-    email: 'youknow@here.com'
+    email: 'youknow@here.com',
+    notes: 'Pretty solid guy'
   }
  ]);
  const [appointments, setAppointments] = useState([
@@ -88,22 +94,30 @@ function App() {
     APPOINTMENTS: "/appointments",
   };
 
-  /*
-  Implement functions to add data to
-  contacts and appointments
-  */
-  const addContact = (name, phone, email) => {
+  const addContact = (name, phone, email, notes) => {
     const contact = {
       name: name,
       phone: phone,
-      email: email
+      email: email,
+      notes: notes
     };
     setContacts(prev => [...prev, contact]);
   };
-  //Add key to all state for delete button?
 
-  const removeContact = (id) => {
-    setContacts(contacts.filter((contact, index) => index !== id));
+  const editContact = (name, newName, newPhone, newEmail, newNotes) => {
+    const current = contacts;
+    const contact = current.findIndex(contact => contact.name === name);
+    current[contact] = {
+      name: newName,
+      phone: newPhone,
+      email: newEmail,
+      notes: newNotes
+    }
+    setContacts(current);
+  };
+
+  const removeContact = (name) => {
+    setContacts(contacts.filter((contact) => contact.name !== name));
   }; 
 
   const addAppointment = (title, contact, date, time, body) => {
@@ -117,9 +131,9 @@ function App() {
     setAppointments(prev => [...prev, appointment]);
   };
 
-  const removeAppointment = (id) => {
-    setAppointments(appointments.filter((appointment, index) => index !== id));
-  }; 
+  // const removeAppointment = (id) => {
+  //   setAppointments(appointments.filter((appointment, index) => index !== id));
+  // }; 
 
 
   return (
@@ -139,11 +153,11 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
              {/* Add props to ContactsPage */}
-            <ContactsPage contacts={contacts} addContact={addContact} handleDelete={removeContact} />
+            <ContactsPage contacts={contacts} addContact={addContact} removeContact={removeContact} editContact={editContact}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage appointments={appointments} contacts={contacts} addAppointment={addAppointment} handleDelete={removeAppointment} />
+            <AppointmentsPage appointments={appointments} contacts={contacts} addAppointment={addAppointment} />
           </Route>
         </Switch>
       </main>

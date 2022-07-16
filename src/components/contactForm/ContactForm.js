@@ -7,6 +7,7 @@ export const ContactForm = ({
   setPhone,
   email,
   setEmail,
+  notes, setNotes,
   handleSubmit
 }) => {
   return (
