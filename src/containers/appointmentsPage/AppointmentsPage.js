@@ -48,7 +48,6 @@ export const AppointmentsPage = ({ appointments, contacts, addAppointment, handl
     body, setBody,
     handleSubmit
   }
-
   const emptyMessage = 'Add an appointment';
 
   return (
@@ -61,7 +60,7 @@ export const AppointmentsPage = ({ appointments, contacts, addAppointment, handl
       <section className='appointments-list'>
         <h2>Appointments</h2>
         <div className="appointments-tiles">
-          <TileList data={appointments} emptyMessage={emptyMessage} handleDelete={handleDelete} />
+          <TileList data={appointments} emptyMessage={emptyMessage} />
         </div>
       </section>
     </div>

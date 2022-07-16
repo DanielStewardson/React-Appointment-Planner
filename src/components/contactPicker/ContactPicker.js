@@ -11,7 +11,6 @@ export const ContactPicker = ({ contacts, contact, setContact }) => {
               <option key={contact.name} value={contact.name}>{contact.name}</option>
             )
           })}
-
       </select>
     </>
   );

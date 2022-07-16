@@ -36,20 +36,3 @@
     justify-content: center;
     /* background-color: blueviolet; */
 }
-
-.appointments-tiles .tile-container {
-    background-color: rgb(235, 235, 235);
-    margin: 5px;
-    padding: 1rem 8rem 1rem 1rem;
-    border-radius: 3px;
-    width: 20rem;
-}
-
-.appointments-tiles .tile-title {
-    padding: .3rem 0;
-    font-weight: bold;
-}
-
-.appointments-tiles .tile {
-    padding: .3rem 0;
-}
