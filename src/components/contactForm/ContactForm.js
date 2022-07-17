@@ -1,4 +1,5 @@
 import React from "react";
+import './contactForm.css';
 
 export const ContactForm = ({
   name,
@@ -8,6 +9,7 @@ export const ContactForm = ({
   email,
   setEmail,
   notes, setNotes,
+  editing,
   handleSubmit
 }) => {
   return (
@@ -21,7 +23,20 @@ export const ContactForm = ({
       <label htmlFor="email">Email address:</label><br/>
       <input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
 
-      <input type='submit' value='Save contact'></input>
+    {editing 
+      ?     
+        <input
+          type='submit' 
+          value='Edit contact'
+          style={{background: 'hsl(97, 40%, 49%)'}}>
+        </input>
+      :
+        <input 
+          type='submit' 
+          value='Save contact'
+          style={{ background:' #03a8d8'}}>    
+        </input>
+    }
     </form>
   );
 };
