@@ -14,7 +14,9 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
  const [showContact, setShowContact] = useState(false);
  const [contactDetails, setContactDetails] = useState('');
  const [editing, setEditing] = useState(false);
+ const [showNewContact, setShowNewContact] = useState(false);
 
+  //  ----------------------------- Check for duplicate contact
   useEffect(() => {
     setDuplicate(false);
     if (contacts) {
@@ -23,8 +25,22 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
           setDuplicate(true);
         }});
     };
-    // console.log('rendered');
   }, [name, contacts]);
+
+  //  ----------------------------- Show new contact once added
+  useEffect(() => {
+    if (showNewContact) {
+      showContactDetails(showNewContact);
+      setShowNewContact(false);
+    };
+  }, [contacts]);
+
+  const resetStates = () => {
+    setName('');
+    setPhone('');
+    setEmail('');
+    setNotes('');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,20 +56,14 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
     if (editing && (!duplicate || editing === name)) {
       editContact(editing, name, phone, email, notes);
       showContactDetails(name);
-      setName('');
-      setPhone('');
-      setEmail('');
-      setNotes('');
+      resetStates();
       setEditing(false);
       return;
     };
     if (!duplicate) {
       addContact(name, phone, email, notes);
-      // showContactDetails(name);   //why is this not working??
-      setName('');
-      setPhone('');
-      setEmail('');
-      setNotes('');
+      setShowNewContact(name);
+      resetStates();
       return;
     };
     alert('Name already saved in contacts');
@@ -71,10 +81,7 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
   const handleDelete = (name) => {
     removeContact(name);
     setShowContact(false);
-    setName('');
-    setPhone('');
-    setEmail('');
-    setNotes('');
+    resetStates();
   };
 
   const showContactDetails = (name) => {
@@ -88,6 +95,7 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
     phone, setPhone,
     email, setEmail,
     notes, setNotes,
+    editing,
     handleSubmit
   };
   const tileProps = contacts.map(contact => contact.name);
@@ -116,5 +124,3 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
     </div>
   );
 };
-
-//pass func to tiles that will open modal with contact info, with edit, save and delete buttons
