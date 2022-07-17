@@ -99,20 +99,33 @@ select {
   box-sizing: border-box;
 }
 
-/* .tile {
-  margin: 0;
-  font-size: 14px;
-  margin-bottom: 4px;
-} */
-
-.tile.tile-title {
-  font-weight: bold;
+@media only screen and (max-width: 680px) {
+  main {
+    margin: 0 auto;
+    width: 90%;
+  }
 }
 
-.tile-container {
+/* --------------------------- Details Tiles ----------------------------  */
+
+.tile {
   position: relative;
-  /* margin-bottom: 20px; */
+  background-color: rgb(235, 235, 235);
+  margin: 2px 0;
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  /* width: 18rem; */
 }
+
+.tile-title {
+  /* font-weight: bold; */
+}
+
+.tile:hover {
+  cursor: pointer;
+}
+
+/* --------------------------- Delete Button ----------------------------  */
 
 .delete-button {
   position: absolute;
