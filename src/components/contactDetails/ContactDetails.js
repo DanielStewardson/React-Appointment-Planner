@@ -38,4 +38,3 @@ export const ContactDetails = ({ contactDetails, handleDelete, handleEditContact
         </div>
     )
 };
-//add edit and delete buttons
