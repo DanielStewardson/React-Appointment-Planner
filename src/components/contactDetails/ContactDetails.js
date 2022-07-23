@@ -1,12 +1,13 @@
 import React from "react";
 import './contactDetails.css';
 
-export const ContactDetails = ({ contactDetails, handleDelete, handleEditContact }) => {
+export const ContactDetails = ({ contactDetails, handleDelete, handleEditContact, closeContactDetails }) => {
     return (
         <div className='contact-details-container'>
             <div className='contact-details-content'>
                 <div className='contact-details-header'>
                     <h3 className='contact-details-name'>{contactDetails.name}</h3>
+                    <button className='close-item-button' onClick={closeContactDetails}>  &#x2715;  </button>
                 </div>
                 <div className='contact-details-body'>
                     <div className='contact-details-item'>
