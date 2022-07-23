@@ -7,6 +7,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  /* color: white; */
 }
 
 *, *:before, *:after {
@@ -19,6 +20,12 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   font-weight: normal;
 }
 
+h2 {
+  font-weight: bold;
+  font-size: 18px;
+  /* margin-bottom: 18px; */
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -28,52 +35,70 @@ textarea {
   resize: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+/*------------------------------------- Background*/
+
+.bg {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background: rgb(82, 82, 82) */
+}
+
 /* -------------------------- Main positioning ----------------------- */
+
+.absolute {
+  position: absolute;
+}
 
 main {
   margin: 0 auto;
   width: 80%;
 }
-
-nav > a {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  color: #000000;
-  margin-right: 30.5px;
-  text-decoration-line: none;
-}
-
-nav > a.active {
-  text-decoration-line: underline;
-}
+/*------------------------------ Nav Bar ------------------------------ */
 
 nav {
   display: flex;
-  padding: 10px;
-  padding-left: 20px;
-  border-bottom: 1px solid #979797;
+  justify-content: center;
   margin-bottom: 20px;
-  background-color: #03a8d8;
+  background: #03a8d8;
 }
 
-h2 {
-  font-weight: bold;
-  font-size: 18px;
-  color: #000000;
-  margin: 0;
-  margin-bottom: 18px;
+nav > a {
+  position: relative;
+  font-style: normal;
+  font-weight: normal;
+  color: white;
+  text-decoration-line: none;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #979797;
-  margin: 20px 0;
+nav > a.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 6px;
+  width: 100%;
+  background: #0286ae;
+}
+
+.navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 8rem;
+  margin: 0 1rem;
 }
 
 input[type="submit"] {
   background: #03a8d8;
-  border-radius: 4px;
+  border-radius: 8px;
   color: #ffffff;
   font-weight: bold;
   font-size: 14px;
@@ -84,6 +109,9 @@ input[type="submit"] {
   font-family: "Open Sans", sans-serif;
   margin-top: 10px;
   margin-bottom: 0px;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
 }
 
 input,
@@ -102,30 +130,20 @@ select {
 @media only screen and (max-width: 680px) {
   main {
     margin: 0 auto;
-    width: 90%;
+    width: 95%;
   }
 }
 
-/* --------------------------- Details Tiles ----------------------------  */
+/* --------------------------- Delete Button ----------------------------  */
 
-.tile {
-  position: relative;
-  background-color: rgb(235, 235, 235);
-  margin: 2px 0;
-  padding: .5rem 1rem;
-  border-radius: 3px;
-  /* width: 18rem; */
+.close-item-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
 }
-
-.tile-title {
-  /* font-weight: bold; */
-}
-
-.tile:hover {
+.close-item-button:hover {
   cursor: pointer;
 }
-
-/* --------------------------- Delete Button ----------------------------  */
 
 .delete-button {
   position: absolute;
