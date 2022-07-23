@@ -1,4 +1,5 @@
 import React from "react";
+import './tile.css';
 
 export const Tile = ({ data, showDetails }) => {
   const tileData = Object.values(data);
@@ -24,6 +25,4 @@ export const Tile = ({ data, showDetails }) => {
     </div>
   );
 };
-
-// Make notes a pop out on click rather then straight render
 //make onclick run passed down function from contacts, appoints etc. that will open modal

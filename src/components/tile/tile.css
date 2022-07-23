@@ -1,0 +1,15 @@
+.tile {
+    position: relative;
+    margin: 2px 0;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+  }
+  
+  .tile-title {
+    /* font-weight: bold; */
+  }
+  
+  .tile:hover {
+    cursor: pointer;
+  }
+  
