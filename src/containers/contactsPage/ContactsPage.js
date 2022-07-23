@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ContactForm } from '../../components/contactForm/ContactForm';
 import { TileList } from "../../components/tileList/TileList";
 import { ContactDetails } from '../../components/contactDetails/ContactDetails';
+import { Header } from "../../components/pageHeaders/header";
 import './contactsPage.css';
 
-export const ContactsPage = ({ contacts, addContact, removeContact, editContact }) => {
+export const ContactsPage = ({ contacts, addContact, removeContact, editContact, screenSize }) => {
 
  const [name, setName] = useState('');
  const [phone, setPhone] = useState('');
@@ -15,8 +16,11 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
  const [contactDetails, setContactDetails] = useState('');
  const [editing, setEditing] = useState(false);
  const [showNewContact, setShowNewContact] = useState(false);
+ const [showAddContact, setShowAddContact] = useState(false);
 
-  //  ----------------------------- Check for duplicate contact
+ const breakpoint = 820;
+
+  //  ----------------------------- Check for duplicate contacts
   useEffect(() => {
     setDuplicate(false);
     if (contacts) {
@@ -33,13 +37,14 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
       showContactDetails(showNewContact);
       setShowNewContact(false);
     };
-  }, [contacts]);
+  }, [contacts, showNewContact, setShowNewContact]);
 
   const resetStates = () => {
     setName('');
     setPhone('');
     setEmail('');
     setNotes('');
+    setShowAddContact(false);
   };
 
   const handleSubmit = (e) => {
@@ -69,9 +74,23 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
     alert('Name already saved in contacts');
   };
 
+  const handleAddContact = () => {
+    setShowAddContact(true);
+    setEditing(false);
+    setName('');
+    setPhone('');
+    setEmail('');
+    setNotes('');
+  };
+
+  const closeAddContact = () => {
+    setShowAddContact(false);
+  };
+
   const handleEditContact = (name) => {
     const contact = contacts.find(contact => contact.name === name);
     setEditing(name);
+    setShowAddContact(true);
     setName(contact.name);
     setPhone(contact.phone);
     setEmail(contact.email);
@@ -82,13 +101,18 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
     removeContact(name);
     setShowContact(false);
     resetStates();
+    setEditing(false);
   };
 
   const showContactDetails = (name) => {
     setContactDetails(contacts.find(contact => contact.name === name));
     setShowContact(true);
+    setEditing(false);
   };
 
+  const closeContactDetails = () => {
+    setShowContact(false);
+  };
 
   const childProps = {
     name, setName, 
@@ -96,6 +120,7 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
     email, setEmail,
     notes, setNotes,
     editing,
+    closeAddContact,
     handleSubmit
   };
   const tileProps = contacts.map(contact => contact.name);
@@ -103,22 +128,40 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact 
 
   return (
     <div>
-      <section className='add-contact'>
-        <h2>Add Contact</h2> 
+      {showAddContact &&
         <ContactForm {...childProps} />
-      </section>
-      <hr />
-      <section className="contacts-page-contacts-container">
-        <div className='contacts-list'>
-          <h3>Contacts</h3>
-          <div className="contacts-tiles">
-            <TileList data={tileProps} emptyMessage={emptyMessage} showDetails={showContactDetails} />
+      }
+      <Header pageName={'Contacts'} />
+      <section className="contacts-page">
+        <div className="contacts-page-contacts-container">
+          <div className='contacts-list'>
+            <div className='contacts-list-header'>
+              <h3>Contacts</h3>
+              <button className='add-contact-button' onClick={handleAddContact}>Add contact</button>
+            </div>
+            <div className="contacts-tiles">
+              <TileList data={tileProps} emptyMessage={emptyMessage} showDetails={showContactDetails} />
+            </div>
           </div>
-        </div>
-        <div className="contacts-page-details">
-          { showContact && 
-           <ContactDetails contactDetails={contactDetails} handleDelete={handleDelete} handleEditContact={handleEditContact} />
+
+          {screenSize < breakpoint
+           ?
+            showContact &&
+              <div className="contacts-page-details absolute contacts-page-details-mobile">
+                <ContactDetails contactDetails={contactDetails} handleDelete={handleDelete} handleEditContact={handleEditContact} closeContactDetails={closeContactDetails} />
+              </div>
+           :
+           <div className="contacts-page-details">
+           { showContact ? 
+            <ContactDetails contactDetails={contactDetails} handleDelete={handleDelete} handleEditContact={handleEditContact} closeContactDetails={closeContactDetails} />
+           :
+             <div className="contact-details-filler-display">
+               <button className='contact-details-button add' onClick={handleAddContact}>Add a contact</button>
+             </div>
+           }
+            </div>
           }
+          
         </div>
       </section>
     </div>
