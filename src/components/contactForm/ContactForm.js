@@ -33,7 +33,7 @@ export const ContactForm = ({
   };
 
   return (
-    <div className="add-contact-modal" onClick={closeAddContact} >
+    <div className="modal-bg" onClick={closeAddContact} >
       <div className="add-contact"  onClick={e => e.stopPropagation()}>
         <div className="add-contact-header">
           <h3>{editing ? 'Edit contact details' : 'Add contact details'}</h3>
