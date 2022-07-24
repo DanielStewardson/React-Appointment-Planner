@@ -25,4 +25,3 @@ export const Tile = ({ data, showDetails }) => {
     </div>
   );
 };
-//make onclick run passed down function from contacts, appoints etc. that will open modal
