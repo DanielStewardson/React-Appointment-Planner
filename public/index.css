@@ -66,7 +66,6 @@ main {
 nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
   background: #03a8d8;
 }
 
