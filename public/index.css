@@ -7,7 +7,6 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
-  /* color: white; */
 }
 
 *, *:before, *:after {
@@ -23,7 +22,6 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 h2 {
   font-weight: bold;
   font-size: 18px;
-  /* margin-bottom: 18px; */
 }
 
 img {
@@ -35,8 +33,25 @@ textarea {
   resize: none;
 }
 
+button {
+  position: relative;
+  overflow: hidden;
+}
+
 button:hover {
   cursor: pointer;
+}
+
+button:hover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: hsl(0, 0%, 0%, 0.5);
 }
 
 /*------------------------------------- Background*/
@@ -48,7 +63,6 @@ button:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  /* background: rgb(82, 82, 82) */
 }
 
 /* -------------------------- Main positioning ----------------------- */
@@ -96,6 +110,7 @@ nav > a.active:after {
 }
 
 input[type="submit"] {
+  position: relative;
   background: #03a8d8;
   border-radius: 8px;
   color: #ffffff;
@@ -111,7 +126,9 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   cursor: pointer;
+  background: #38606b;
 }
+
 
 input,
 select {
