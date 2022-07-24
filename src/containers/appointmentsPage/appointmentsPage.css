@@ -11,7 +11,6 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
-    /* background-color: aqua; */
 }
 /* --------------------- Appointment Form --------------------- */
 
@@ -27,12 +26,10 @@
 .appointments-list {
     display: flex;
     flex-direction: column;
-    /* background-color: aqua; */
 }
 
 .appointments-tiles {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* background-color: blueviolet; */
 }

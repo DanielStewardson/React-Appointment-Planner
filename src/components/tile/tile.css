@@ -5,10 +5,6 @@
     border-radius: 3px;
   }
   
-  .tile-title {
-    /* font-weight: bold; */
-  }
-  
   .tile:hover {
     cursor: pointer;
   }
