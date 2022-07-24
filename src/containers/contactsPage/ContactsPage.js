@@ -139,9 +139,16 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact,
               <h3>Contacts</h3>
               <button className='add-contact-button' onClick={handleAddContact}>Add contact</button>
             </div>
+
+            {contacts.length !== 0 
+            ?
             <div className="contacts-tiles">
-              <TileList data={tileProps} emptyMessage={emptyMessage} showDetails={showContactDetails} />
+             <TileList data={tileProps} showDetails={showContactDetails} />
             </div>
+           :
+            <div className=" contacts-tiles-empty">
+            </div>
+            }
           </div>
 
           {screenSize < breakpoint
