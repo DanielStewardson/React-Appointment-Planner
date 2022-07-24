@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ContactForm } from '../../components/contactForm/ContactForm';
 import { TileList } from "../../components/tileList/TileList";
 import { ContactDetails } from '../../components/contactDetails/ContactDetails';
-import { Header } from "../../components/pageHeaders/header";
 import './contactsPage.css';
 
 export const ContactsPage = ({ contacts, addContact, removeContact, editContact, screenSize }) => {
@@ -124,14 +123,12 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact,
     handleSubmit
   };
   const tileProps = contacts.map(contact => contact.name);
-  const emptyMessage = 'Add a contact';
 
   return (
     <div>
       {showAddContact &&
         <ContactForm {...childProps} />
       }
-      <Header pageName={'Contacts'} />
       <section className="contacts-page">
         <div className="contacts-page-contacts-container">
           <div className='contacts-list'>

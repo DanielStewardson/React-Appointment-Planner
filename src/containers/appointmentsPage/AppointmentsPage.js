@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 import { TileList } from "../../components/tileList/TileList";
-import { Header } from "../../components/pageHeaders/header";
 import './appointmentsPage.css';
 
 export const AppointmentsPage = ({ appointments, contacts, addAppointment, handleDelete }) => {
@@ -53,7 +52,6 @@ export const AppointmentsPage = ({ appointments, contacts, addAppointment, handl
 
   return (
     <div>
-      <Header pageName={'Appointments'} />
       <section className='add-appointment'>
         <h2>Add Appointment</h2>
         <AppointmentForm {...childProps} />

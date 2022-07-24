@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect, NavLink } from "react-router-dom";
+import { Switch, Route, Redirect, NavLink, useLocation } from "react-router-dom";
 
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
+import { Header } from './components/pageHeaders/header';
 
 function App() {
 
@@ -90,6 +91,8 @@ function App() {
     }
   ]);
 
+  const location = useLocation();
+  const pathName = location.pathname.charAt(1).toUpperCase() + location.pathname.slice(2);
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
@@ -148,10 +151,9 @@ function App() {
   //   setAppointments(appointments.filter((appointment, index) => index !== id));
   // }; 
 
-
   return (
     <>
-    <div className="bg"></div>
+      <div className="bg"></div>
       <nav className="nav-bar">
         <NavLink to={ROUTES.CONTACTS} className="navLink" activeClassName="active">
           Contacts
@@ -160,6 +162,7 @@ function App() {
           Appointments
         </NavLink>
       </nav>
+      <Header pageName={pathName} />
       <main>
         <Switch>
           <Route exact path="/">
