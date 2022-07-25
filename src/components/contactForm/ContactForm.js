@@ -2,12 +2,9 @@ import React, { useEffect } from "react";
 import './contactForm.css';
 
 export const ContactForm = ({
-  name,
-  setName,
-  phone,
-  setPhone,
-  email,
-  setEmail,
+  name, setName,
+  phone, setPhone,
+  email, setEmail,
   notes, setNotes,
   editing,
   closeAddContact,
@@ -43,14 +40,16 @@ export const ContactForm = ({
         <form className='contact-form' onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label><br/>
           <input 
-          type='text' 
-          id='name'
-          autoComplete="new-password"
-          value={name.split(' ').map(e => {
-            return e.charAt(0).toUpperCase() + e.slice(1);
-            }).join(' ')
-          } 
-          onChange={(e) => setName(e.target.value)}></input>
+            type='text' 
+            id='name'
+            autoComplete="new-password"
+            maxLength='50'
+            value={name.split(' ').map(e => {
+              return e.charAt(0).toUpperCase() + e.slice(1);
+              }).join(' ')
+            } 
+            onChange={(e) => setName(e.target.value)}>
+          </input>
 
           <label htmlFor="phone">UK Phone number:</label><br/>
           <input type='tel' id='phone' pattern='[0][0-9]{10}$' value={phone} onChange={(e) => setPhone(e.target.value)}></input>
