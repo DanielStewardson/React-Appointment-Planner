@@ -2,9 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5rem;
     padding: 3rem 0;
     margin-bottom: 3rem;
     color: white;
     background: #03a8d8;
+}
+
+@media only screen and (max-width: 680px) {
+    .page-header {
+        padding: 1rem 0;
+         margin-bottom: 2rem;
+    }
 }
