@@ -8,6 +8,7 @@ import { Header } from './components/pageHeaders/header';
 function App() {
 
   const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const breakpoint = 820;
   const [contacts, setContacts] = useState([
     {
       name: 'Daniel S',
@@ -68,26 +69,30 @@ function App() {
     {
       title: 'Walk the dog',
       contact: 'Windsor Hallifax',
-      date: '2022-06-21',
-      time: '06:20'
+      date: '2022-06-20',
+      time: '06:20',
+      notes: 'None yet'
     },
     {
       title: 'Walk the goldfish',
       contact: 'johnny boy',
       date: '2022-06-21',
-      time: '06:20'
+      time: '06:20',
+      notes: 'None yet'
     },
     {
       title: 'Walk the iguana',
       contact: 'johnny boy',
       date: '2022-06-21',
-      time: '06:20'
+      time: '06:20',
+      notes: 'None yet'
     },
     {
       title: 'Walk the panda bear',
       contact: 'Windsor Hallifax',
-      date: '2022-06-21',
-      time: '06:20'
+      date: '2022-06-22',
+      time: '06:20',
+      notes: 'None yet'
     }
   ]);
 
@@ -105,10 +110,11 @@ function App() {
     return () => window.removeEventListener('resize', handleResizeWindow);
   }, []);
 
-  // --------------------------- Alphabetize contacts
+  // --------------------------------- Alphabetize stored details
   useEffect(() => {
-    setContacts(contacts.sort((a, b) => a.name.localeCompare(b.name)))
-  }, [contacts]);
+    contacts.sort((a, b) => a.name.localeCompare(b.name))
+    appointments.sort((a, b) => Number(new Date(a.date)) - Number(new Date(b.date)));
+  }, [appointments, contacts]);
 
   const addContact = (name, phone, email, notes) => {
     const contact = {
@@ -136,20 +142,34 @@ function App() {
     setContacts(contacts.filter((contact) => contact.name !== name));
   }; 
 
-  const addAppointment = (title, contact, date, time, body) => {
+  // ---------------------------------------------------- Appointment functions
+  const addAppointment = (title, contact, date, time, notes) => {
     const appointment = {
       title: title,
       contact: contact,
       date: date,
       time: time,
-      body: body
+      notes: notes
     };
-    setAppointments(prev => [...prev, appointment]);
+    setAppointments(prev => [...prev, appointment].sort((a, b) => Number(new Date(a.date)) - Number(new Date(b.date))));
   };
 
-  // const removeAppointment = (id) => {
-  //   setAppointments(appointments.filter((appointment, index) => index !== id));
-  // }; 
+  const editAppointment = (title, newTitle, newContact, newDate, newTime, newNotes) => {
+    const current = appointments;
+    const appointment = current.findIndex(appointment => appointment.title === title);
+    current[appointment] = {
+      title: newTitle,
+      contact: newContact,
+      date: newDate,
+      time: newTime,
+      notes: newNotes
+    }
+    setAppointments(current.sort((a, b) => Number(new Date(a.date)) - Number(new Date(b.date))));
+  };
+
+  const removeAppointment = (name) => {
+    setAppointments(appointments.filter((appointment) => appointment.title !== name));
+  }; 
 
   return (
     <>
@@ -169,10 +189,25 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-            <ContactsPage contacts={contacts} addContact={addContact} removeContact={removeContact} editContact={editContact} screenSize={screenSize} />
+            <ContactsPage 
+              contacts={contacts} 
+              addContact={addContact} 
+              removeContact={removeContact} 
+              editContact={editContact} 
+              screenSize={screenSize} 
+              breakpoint={breakpoint} 
+            />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            <AppointmentsPage appointments={appointments} contacts={contacts} addAppointment={addAppointment} />
+            <AppointmentsPage 
+              appointments={appointments} 
+              contacts={contacts} 
+              addAppointment={addAppointment} 
+              editAppointment={editAppointment}
+              removeAppointment={removeAppointment}
+              screenSize={screenSize} 
+              breakpoint={breakpoint} 
+            />
           </Route>
         </Switch>
       </main>
