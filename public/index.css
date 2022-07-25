@@ -171,6 +171,16 @@ select {
     margin: 0 auto;
     width: 98%;
   }
+  nav {
+    display: flex;
+    justify-content:flex-start;
+  }
+  .navLink {
+    flex-grow: 1;
+    height: 3rem;
+    width: fit-content;
+    margin: 0 0rem;
+  }
 }
 
 /* --------------------------- Delete Button ----------------------------  */
