@@ -2,33 +2,47 @@
     position: relative;
     height: 100%;
     border-radius: 8px;
-    border: 1px solid hsl(0, 0%, 0%, 0.4);
+    border: 1px solid hsl(0, 0%, 0%, 0.4);    
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 
-.contact-details-content {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
-
 .contact-details-header {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
     padding: .4rem;
     margin-bottom: 1rem;
     border-radius: 3px 3px 0 0;
     color: white;
     background: #03a8d8;
+    
 }
-
 .contact-details-name {
-    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    overflow-wrap: break-word;
 }
 
 .contact-details-body {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    margin-bottom: 6.5rem;
+}
+
+.contact-details-body::-webkit-scrollbar {
+    width: 15px;
+}
+.contact-details-body::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+.contact-details-body::-webkit-scrollbar-thumb {
+    border: 3px solid white;
+    background: #03a8d8;
+    border-radius: 100px;
+}
+.contact-details-body::-webkit-scrollbar-thumb:hover {
+    background-color: #02779b;
+    cursor: pointer;
 }
 
 .contact-details-item {
@@ -37,12 +51,10 @@
     padding: .8rem;
     padding-bottom: 1.2rem;
     border-radius: 8px;
+    overflow-wrap: break-word;
 }
 .contact-details-item h4 {
     margin-bottom: .5rem;
-}
-.contact-details-item p {
-    border-radius: 3px;
 }
 
 .contact-details-item:after {
@@ -79,11 +91,4 @@
 .edit, 
 .add {
     background-color: hsl(194, 97%, 43%);
-}
-.contact-details-button:hover {
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 820px) {
-
 }
