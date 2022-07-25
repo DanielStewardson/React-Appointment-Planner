@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, Redirect, NavLink, useLocation } from "react-router-dom";
 
+import HomePage from "./containers/homePage/HomePage";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 import { Header } from './components/pageHeaders/header';
@@ -175,6 +176,9 @@ function App() {
     <>
       <div className="bg"></div>
       <nav className="nav-bar">
+        <NavLink to='/' exact={true} className="navLink" activeClassName="active">
+          Home
+        </NavLink>
         <NavLink to={ROUTES.CONTACTS} className="navLink" activeClassName="active">
           Contacts
         </NavLink>
@@ -186,7 +190,7 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <Redirect to={ROUTES.CONTACTS} />
+            <HomePage />
           </Route>
           <Route path={ROUTES.CONTACTS}>
             <ContactsPage 
