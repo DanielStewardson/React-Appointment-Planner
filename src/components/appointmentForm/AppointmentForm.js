@@ -39,6 +39,8 @@ export const AppointmentForm = ({
     };
   };
 
+  const titleRegex = "[a-zA-Z0-9- .'!?:&£$@]{1,50}";
+
   return (
     <div className='modal-bg' onClick={closeAddAppointment}>
       <div className="add-appointment"  onClick={e => e.stopPropagation()}>
@@ -53,7 +55,9 @@ export const AppointmentForm = ({
               type='text'
               id='title'
               autoComplete="new-password"
-              maxLength='50'     
+              maxLength='50' 
+              pattern={titleRegex}
+              required    
               value={title} 
               onChange={(e) => setTitle(e.target.value)}>
             </input>

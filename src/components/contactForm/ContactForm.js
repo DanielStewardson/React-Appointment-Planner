@@ -29,6 +29,9 @@ export const ContactForm = ({
     };
   };
 
+  const nameRegex = "[a-zA-Z0-9- .'!?]{1,50}";
+  const phoneRegex = '[0-9-+ ()]{1,25}';
+
   return (
     <div className="modal-bg" onClick={closeAddContact} >
       <div className="add-contact"  onClick={e => e.stopPropagation()}>
@@ -44,6 +47,9 @@ export const ContactForm = ({
             id='name'
             autoComplete="new-password"
             maxLength='50'
+            placeholder='Special characters accepted ( - . &#8216; )'
+            pattern={nameRegex}
+            required
             value={name.split(' ').map(e => {
               return e.charAt(0).toUpperCase() + e.slice(1);
               }).join(' ')
@@ -51,11 +57,24 @@ export const ContactForm = ({
             onChange={(e) => setName(e.target.value)}>
           </input>
 
-          <label htmlFor="phone">UK Phone number:</label><br/>
-          <input type='tel' id='phone' pattern='[0][0-9]{10}$' value={phone} onChange={(e) => setPhone(e.target.value)}></input>
+          <label htmlFor="phone">Phone number:</label><br/>
+          <input 
+            type='tel' 
+            id='phone'
+            maxLength='25'
+            placeholder='+44, (0), (-)'
+            pattern={phoneRegex} 
+            value={phone} 
+            onChange={(e) => setPhone(e.target.value)}>
+           </input>
 
           <label htmlFor="email">Email address:</label><br/>
-          <input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+          <input 
+            type='email' 
+            id='email' 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)}>
+          </input>
 
           <div className="add-contact-note-button-div">
             <button className='add-contact-note-button' type='button' onClick={contactNotes}> 
