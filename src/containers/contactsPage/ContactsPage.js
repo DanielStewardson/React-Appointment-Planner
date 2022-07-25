@@ -4,7 +4,12 @@ import { TileList } from "../../components/tileList/TileList";
 import { ContactDetails } from '../../components/contactDetails/ContactDetails';
 import './contactsPage.css';
 
-export const ContactsPage = ({ contacts, addContact, removeContact, editContact, screenSize }) => {
+export const ContactsPage = ({ contacts, 
+  addContact, 
+  removeContact, 
+  editContact, 
+  screenSize, 
+  breakpoint }) => {
 
  const [name, setName] = useState('');
  const [phone, setPhone] = useState('');
@@ -16,8 +21,6 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact,
  const [editing, setEditing] = useState(false);
  const [showNewContact, setShowNewContact] = useState(false);
  const [showAddContact, setShowAddContact] = useState(false);
-
- const breakpoint = 820;
 
   //  ----------------------------- Check for duplicate contacts
   useEffect(() => {
@@ -76,10 +79,6 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact,
   const handleAddContact = () => {
     setShowAddContact(true);
     setEditing(false);
-    setName('');
-    setPhone('');
-    setEmail('');
-    setNotes('');
   };
 
   const closeAddContact = () => {
@@ -131,6 +130,7 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact,
       }
       <section className="contacts-page">
         <div className="contacts-page-contacts-container">
+          
           <div className='contacts-list'>
             <div className='contacts-list-header'>
               <h3>Contacts</h3>
@@ -152,12 +152,22 @@ export const ContactsPage = ({ contacts, addContact, removeContact, editContact,
            ?
             showContact &&
               <div className="contacts-page-details absolute contacts-page-details-mobile">
-                <ContactDetails contactDetails={contactDetails} handleDelete={handleDelete} handleEditContact={handleEditContact} closeContactDetails={closeContactDetails} />
+                <ContactDetails 
+                  contactDetails={contactDetails} 
+                  handleDelete={handleDelete} 
+                  handleEditContact={handleEditContact} 
+                  closeContactDetails={closeContactDetails} 
+                />
               </div>
            :
            <div className="contacts-page-details">
            { showContact ? 
-            <ContactDetails contactDetails={contactDetails} handleDelete={handleDelete} handleEditContact={handleEditContact} closeContactDetails={closeContactDetails} />
+            <ContactDetails 
+              contactDetails={contactDetails} 
+              handleDelete={handleDelete} 
+              handleEditContact={handleEditContact} 
+              closeContactDetails={closeContactDetails} 
+            />
            :
              <div className="contact-details-filler-display">
                <button className='contact-details-button add' onClick={handleAddContact}>Add a contact</button>
