@@ -1,0 +1,102 @@
+.add-appointment {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 30rem;
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.add-appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: .4rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: 3px 3px 0 0;
+    color: white;
+    background-color: #03a8d8;
+}
+
+.appointment-form {
+    position: relative;
+    width: 20rem;
+    margin-bottom: 2rem;
+}
+
+/* -------------------------------- Notes pop up  */
+
+.add-appointment-note-button {
+    color: white;
+    padding: .4rem .5rem;
+    border: none;
+    border-radius: 8px;
+    background: #03a8d8;
+}
+
+.add-appointment-note-button-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-appointment-note-button {
+    width: 60%;
+    color: white;
+    padding: .6rem 0;
+    border: none;
+    border-radius: 8px;
+    background: #03a8d8;
+}
+
+.appointment-notes-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+}
+
+.appointment-notes-header {
+    display: flex;
+    justify-content: space-between;
+    padding: .4rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    border-radius: 3px 3px 0 0;
+    color: white;
+    background-color: #03a8d8;
+}
+
+.appointment-notes-area {
+    display: flex;
+    justify-content: center;
+}
+
+.appointment-text-area {
+    width: 80%;
+    height: 12rem;
+}
+
+.appointment-notes-footer {
+    position: absolute;
+    bottom: 0;
+    padding: .6rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 680px) {
+    .add-appointment {
+        width: 98%;
+    }
+}
