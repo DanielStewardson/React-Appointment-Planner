@@ -1,0 +1,99 @@
+.appointment-details-container {
+    position: relative;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid hsl(0, 0%, 0%, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.appointment-details-header {
+    position: relative;
+    padding: .4rem;
+    margin-bottom: 1rem;
+    border-radius: 3px 3px 0 0;
+    color: white;
+    background: #03a8d8;
+}
+
+.appointment-details-name {
+    margin-right: 1.5rem;
+    overflow-wrap: break-word;
+}
+
+.appointment-details-body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-bottom: 6.5rem;
+}
+
+.appointment-details-body::-webkit-scrollbar {
+    width: 15px;
+}
+.appointment-details-body::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+.appointment-details-body::-webkit-scrollbar-thumb {
+    border: 3px solid white;
+    background: #03a8d8;
+    border-radius: 100px;
+}
+.appointment-details-body::-webkit-scrollbar-thumb:hover {
+    background-color: #02779b;
+    cursor: pointer;
+}
+
+.appointment-details-item {
+    position: relative;
+    margin-bottom: .4rem;
+    padding: .8rem;
+    padding-bottom: 1.2rem;
+    border-radius: 8px;
+    overflow-wrap: break-word;
+}
+.appointment-details-item h4 {
+    margin-bottom: .5rem;
+}
+
+.appointment-details-dateAndTime {
+    display: flex;
+    justify-content: space-between;
+}
+
+.appointment-details-item:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 90%;
+    background-color: hsl(0, 0%, 0%, 0.3);
+}
+
+.appointment-details-footer {
+    position: absolute;
+    padding: .5rem 0 .5rem 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.appointment-details-button {
+    width: 80%;
+    margin: .4rem 0;
+    color: white;
+    padding: .6rem 0;
+    border: none;
+    border-radius: 8px;
+}
+.delete {
+    background-color: hsl(0, 100%, 68%);
+}
+.edit, 
+.add {
+    background-color: hsl(194, 97%, 43%);
+}
