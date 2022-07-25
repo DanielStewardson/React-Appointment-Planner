@@ -13,7 +13,7 @@ export const Tile = ({ data, showDetails }) => {
   }
 
   return (
-    <div className="tile" onClick={() => alert(tileData)}>
+    <div className="tile" onClick={() => showDetails(data.title)}>
       {
         tileData.map((element, index) => {
           if (index === 0) {
