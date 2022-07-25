@@ -1,0 +1,40 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-page-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5rem;
+    width: 95%;
+}
+
+.home-page-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.home-page-button {
+    width: 18rem;
+    height: 4rem;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: hsl(194, 97%, 43%)
+}
+
+@media only screen and (max-width: 680px) {
+    .home-page-buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-page-button {
+        margin-bottom: 2rem;
+    }
+}
