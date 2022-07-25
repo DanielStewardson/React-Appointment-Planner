@@ -23,6 +23,9 @@ h2 {
   font-weight: bold;
   font-size: 18px;
 }
+h3 {
+  font-size: 1.5rem;
+}
 
 img {
   max-width: 100%;
@@ -176,19 +179,14 @@ select {
   background: none;
   border: none;
   font-size: 1.2rem;
-}
-.close-item-button:hover {
-  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .delete-button {
   position: absolute;
-  /* top: 0px; */
   right: 5px;
   background: none;
   border: none;
-}
-
-.delete-button:hover {
-  cursor: pointer;
 }
