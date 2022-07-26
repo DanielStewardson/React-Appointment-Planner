@@ -110,8 +110,7 @@ nav {
   z-index: 10;
   width: 100%;
   height: 3rem;
-  /* background: #03a8d8; */
-  background-color: yellowgreen;
+  background: #03a8d8;
 }
 
 nav > a {
