@@ -20,6 +20,12 @@ export const ContactForm = ({
     });
   }, [closeAddContact]);
 
+  // ----------------------------------------------------------Trying to disable scroll on modal 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => document.body.style.overflow = '';
+  }, []);
+
   const contactNotes = () => {
     const el = document.querySelector('.contact-notes-container');
     if (el.style.display === 'none') {

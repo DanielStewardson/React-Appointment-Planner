@@ -23,6 +23,12 @@ export const AppointmentForm = ({
     });
   }, [closeAddAppointment]);
 
+  // ----------------------------------------------------------Trying to disable scroll on modal 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => document.body.style.overflow = '';
+  }, []);
+
   const getTodayString = () => {
     const [month, day, year] = new Date()
       .toLocaleDateString("en-US")
