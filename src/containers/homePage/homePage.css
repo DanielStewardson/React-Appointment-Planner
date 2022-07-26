@@ -34,7 +34,13 @@
         flex-direction: column;
         align-items: center;
     }
+    .home-page-message {
+        margin-bottom: 2.3rem;
+    }
+    .home-page-message h1 {
+        font-size: 1.5rem;
+    }
     .home-page-button {
-        margin-bottom: 2rem;
+        margin-bottom: 1.7rem;
     }
 }

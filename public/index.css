@@ -138,10 +138,10 @@ input[type="submit"] {
   border-radius: 8px;
   color: #ffffff;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1rem;
   border: none;
   outline: none;
-  padding: 8px 0;
+  padding: .5rem 0;
   width: 100%;
   font-family: "Open Sans", sans-serif;
   margin-top: 10px;
@@ -152,14 +152,13 @@ input[type="submit"]:hover {
   background: #38606b;
 }
 
-
 input,
 select {
   font-family: "Open Sans", sans-serif;
   background: #ffffff;
   border: 1px solid #979797;
-  border-radius: 4px;
-  padding: 5px 9.5px 6px 7px;
+  border-radius: 8px;
+  padding: .5rem .5rem .6rem .5rem;
   outline: none;
   width: 100%;
   margin-bottom: 10px;
@@ -181,6 +180,11 @@ select {
     width: fit-content;
     margin: 0 0rem;
   }
+  input,
+  select {
+   font-size: .9rem;
+   padding: .5rem .5rem .6rem .5rem;
+  }
 }
 
 /* --------------------------- Delete Button ----------------------------  */
@@ -188,10 +192,10 @@ select {
 .close-item-button {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 3px;
+  top: 3px;
 }
 
 .delete-button {
