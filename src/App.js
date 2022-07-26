@@ -176,11 +176,6 @@ function App() {
     <>
       <div className="bg"></div>
       <nav className="nav-bar">
-
-      {/* {location.pathname === '/React-Appointment-Planner' &&
-        <Redirect to='/' exact={true} />
-      }     */}
-
         <NavLink to='/' exact={true} className="navLink" activeClassName="active">
           Home
         </NavLink>
