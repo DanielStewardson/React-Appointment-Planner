@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/React-Appointment-Planner/static/css/main.8758ff15.chunk.css",
-    "main.js": "/React-Appointment-Planner/static/js/main.50158a2e.chunk.js",
-    "main.js.map": "/React-Appointment-Planner/static/js/main.50158a2e.chunk.js.map",
+    "main.js": "/React-Appointment-Planner/static/js/main.bea42d9b.chunk.js",
+    "main.js.map": "/React-Appointment-Planner/static/js/main.bea42d9b.chunk.js.map",
     "runtime-main.js": "/React-Appointment-Planner/static/js/runtime-main.fa27c432.js",
     "runtime-main.js.map": "/React-Appointment-Planner/static/js/runtime-main.fa27c432.js.map",
     "static/js/2.df22f14d.chunk.js": "/React-Appointment-Planner/static/js/2.df22f14d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.fa27c432.js",
     "static/js/2.df22f14d.chunk.js",
     "static/css/main.8758ff15.chunk.css",
-    "static/js/main.50158a2e.chunk.js"
+    "static/js/main.bea42d9b.chunk.js"
   ]
 }
