@@ -1,0 +1,23 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    margin-top: 2rem;
+}
+
+.footer-social-links {
+    /* position: absolute; */
+}
+
+.social-logo {
+    width: 35px;
+    margin: .2rem;
+}
+
+.social-logo:hover {
+    background-color: blue;
+}

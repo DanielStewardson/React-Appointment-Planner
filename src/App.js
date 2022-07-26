@@ -5,6 +5,7 @@ import HomePage from "./containers/homePage/HomePage";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 import { Header } from './components/pageHeaders/header';
+import Footer from "./components/footer/Footer";
 
 function App() {
 
@@ -173,49 +174,62 @@ function App() {
   }; 
 
   return (
-    <>
+    <div className="app-div">
       <div className="bg"></div>
-      <nav className="nav-bar">
-        <NavLink to='/' exact={true} className="navLink" activeClassName="active">
-          Home
-        </NavLink>
-        <NavLink to={ROUTES.CONTACTS} className="navLink" activeClassName="active">
-          Contacts
-        </NavLink>
-        <NavLink to={ROUTES.APPOINTMENTS} className="navLink" activeClassName="active">
-          Appointments
-        </NavLink>
-      </nav>
-      <Header pageName={pathName} />
-      <main>
-        <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path={ROUTES.CONTACTS}>
-            <ContactsPage 
-              contacts={contacts} 
-              addContact={addContact} 
-              removeContact={removeContact} 
-              editContact={editContact} 
-              screenSize={screenSize} 
-              breakpoint={breakpoint} 
-            />
-          </Route>
-          <Route path={ROUTES.APPOINTMENTS}>
-            <AppointmentsPage 
-              appointments={appointments} 
-              contacts={contacts} 
-              addAppointment={addAppointment} 
-              editAppointment={editAppointment}
-              removeAppointment={removeAppointment}
-              screenSize={screenSize} 
-              breakpoint={breakpoint} 
-            />
-          </Route>
-        </Switch>
-      </main>
-    </>
+      <div className="top-half">
+        <nav className="nav-bar">
+          <NavLink to='/' exact={true} className="navLink" activeClassName="active">
+            Home
+          </NavLink>
+          <NavLink to={ROUTES.CONTACTS} className="navLink" activeClassName="active">
+            Contacts
+          </NavLink>
+          <NavLink to={ROUTES.APPOINTMENTS} className="navLink" activeClassName="active">
+            Appointments
+          </NavLink>
+        </nav>
+        <header>
+          <Header pageName={pathName} />
+        </header>
+
+        <main>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route path={ROUTES.CONTACTS}>
+              <ContactsPage 
+                contacts={contacts} 
+                addContact={addContact} 
+                removeContact={removeContact} 
+                editContact={editContact} 
+                screenSize={screenSize} 
+                breakpoint={breakpoint} 
+              />
+            </Route>
+            <Route path={ROUTES.APPOINTMENTS}>
+              <AppointmentsPage 
+                appointments={appointments} 
+                contacts={contacts} 
+                addAppointment={addAppointment} 
+                editAppointment={editAppointment}
+                removeAppointment={removeAppointment}
+                screenSize={screenSize} 
+                breakpoint={breakpoint} 
+              />
+            </Route>
+          </Switch>
+        </main>
+      </div>
+
+      <div className="bottom-half">
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+
+    </div>
+
   );
 }
 
