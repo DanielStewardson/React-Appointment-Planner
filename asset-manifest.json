@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/React-Appointment-Planner/static/css/main.c3d8696d.chunk.css",
-    "main.js": "/React-Appointment-Planner/static/js/main.ee48b78d.chunk.js",
-    "main.js.map": "/React-Appointment-Planner/static/js/main.ee48b78d.chunk.js.map",
+    "main.css": "/React-Appointment-Planner/static/css/main.d2ffddd6.chunk.css",
+    "main.js": "/React-Appointment-Planner/static/js/main.864f6c13.chunk.js",
+    "main.js.map": "/React-Appointment-Planner/static/js/main.864f6c13.chunk.js.map",
     "runtime-main.js": "/React-Appointment-Planner/static/js/runtime-main.fa27c432.js",
     "runtime-main.js.map": "/React-Appointment-Planner/static/js/runtime-main.fa27c432.js.map",
     "static/js/2.498e5c46.chunk.js": "/React-Appointment-Planner/static/js/2.498e5c46.chunk.js",
     "static/js/2.498e5c46.chunk.js.map": "/React-Appointment-Planner/static/js/2.498e5c46.chunk.js.map",
     "index.html": "/React-Appointment-Planner/index.html",
-    "static/css/main.c3d8696d.chunk.css.map": "/React-Appointment-Planner/static/css/main.c3d8696d.chunk.css.map",
+    "static/css/main.d2ffddd6.chunk.css.map": "/React-Appointment-Planner/static/css/main.d2ffddd6.chunk.css.map",
     "static/js/2.498e5c46.chunk.js.LICENSE.txt": "/React-Appointment-Planner/static/js/2.498e5c46.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fa27c432.js",
     "static/js/2.498e5c46.chunk.js",
-    "static/css/main.c3d8696d.chunk.css",
-    "static/js/main.ee48b78d.chunk.js"
+    "static/css/main.d2ffddd6.chunk.css",
+    "static/js/main.864f6c13.chunk.js"
   ]
 }

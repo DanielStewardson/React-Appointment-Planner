@@ -169,6 +169,9 @@ input[type="submit"]:hover {
 }
 
 input,
+input[type="text"],
+input[type="date"],
+input[type="time"],
 select {
   font-family: "Open Sans", sans-serif;
   background: #ffffff;
