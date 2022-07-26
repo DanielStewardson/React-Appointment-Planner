@@ -45,8 +45,7 @@ export const ContactForm = ({
           <h3>{editing ? 'Edit contact details' : 'Add contact details'}</h3>
           <button className='close-item-button' onClick={closeAddContact}>  &#x2715;  </button>
         </div>
-
-        <form className='contact-form' onSubmit={handleSubmit}>
+        <form className='contact-form' id='contactForm' onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label><br/>
           <input 
             type='text' 
@@ -90,7 +89,6 @@ export const ContactForm = ({
           
           <input type='submit' value={editing ? 'Edit contact' : 'Save contact'}></input>
         </form>
-        
         <div className='contact-notes-container' style={{display:'none'}}>
           <div className="contact-notes-header">
             <h3>Add a note</h3>
@@ -99,7 +97,7 @@ export const ContactForm = ({
           <div className="contact-notes-area">
             <textarea 
               className="contact-text-area"
-              form='contact-form' 
+              form='contactForm' 
               placeholder="Notes. Max 110 characters."
               maxLength="110"
               value={notes}
@@ -110,8 +108,6 @@ export const ContactForm = ({
            <button className='close-contact-note-button' type='button' onClick={contactNotes}> Add note </button>
           </div>
         </div>
-
-
       </div>
     </div>
   );

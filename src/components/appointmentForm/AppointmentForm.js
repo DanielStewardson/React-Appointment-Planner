@@ -54,7 +54,6 @@ export const AppointmentForm = ({
           <h3>{editing ? 'Edit appointment' : 'Add appointment'}</h3>
           <button className='close-item-button' onClick={closeAddAppointment}>  &#x2715;  </button>
         </div>
-      
           <form className='appointment-form' id='appointmentForm' onSubmit={handleSubmit}>
             <label htmlFor="title">Appointment title:</label><br/>
             <input 
@@ -84,7 +83,6 @@ export const AppointmentForm = ({
 
             <input type='submit' value={editing ? 'Edit appointment' : 'Add appointment'}></input>
           </form>
-
           <div className='appointment-notes-container' style={{display:'none'}}>
             <div className="appointment-notes-header">
               <h3>Add a note</h3>
@@ -93,7 +91,7 @@ export const AppointmentForm = ({
             <div className="appointment-notes-area">
               <textarea 
                 className="appointment-text-area"
-                form='appointment-form' 
+                form='appointmentForm' 
                 placeholder="Notes. Max 600 characters."
                 maxLength="600"
                 value={notes}
@@ -104,9 +102,7 @@ export const AppointmentForm = ({
             <button className='close-appointment-note-button' type='button' onClick={appointmentNotes}> Add note </button>
             </div>
           </div>
-
       </div>
-
     </div>
   );
 };
