@@ -57,13 +57,18 @@ export const AppointmentsPage = ({
     alert('When is your appointment?')
    } else if (editing) {
     editAppointment(editing, title, contact, date, time, notes);
-    showAppointmentDetails(title);
+    showAppointmentDetails(editing);
     resetStates();
     setEditing(false);
     return;
    } else {
-    addAppointment(title, contact, date, time, notes);
-    setShowNewAppointment(title);
+    const key = `${title}${date}${time}`;
+    if (appointments.some(appointment => appointment.key === key)) {
+      alert('This appointment is already saved');
+      return;
+    };
+    addAppointment(title, contact, date, time, notes, key);
+    setShowNewAppointment(key);
     resetStates();
     return;
    };
@@ -78,16 +83,16 @@ export const AppointmentsPage = ({
     setShowAddAppointment(false);
   };
 
-  const handleDelete = (name) => {
-    removeAppointment(name);
+  const handleDelete = (key) => {
+    removeAppointment(key);
     setShowAppointment(false);
     resetStates();
     setEditing(false);
   };
 
-  const handleEditAppointment = (name) => {
-    const appointment = appointments.find(appointment => appointment.title === name);
-    setEditing(name);
+  const handleEditAppointment = (key) => {
+    const appointment = appointments.find(appointment => appointment.key === key);
+    setEditing(key);
     setShowAddAppointment(true);
     setTitle(appointment.title);
     setContact(appointment.contact);
@@ -96,12 +101,11 @@ export const AppointmentsPage = ({
     setNotes(appointment.notes);
   };
 
-  const showAppointmentDetails = (name) => {
-    setAppointmentDetails(appointments.find(appointment => appointment.title === name));
+  const showAppointmentDetails = (key) => {
+    setAppointmentDetails(appointments.find(appointment => appointment.key === key));
     setShowAppointment(true);
     setEditing(false);
   };
-
 
   const closeAppointmentDetails = () => {
     setShowAppointment(false);
@@ -122,7 +126,8 @@ export const AppointmentsPage = ({
   const tileData = appointments.map(appointment => (
     { 
      title: appointment.title, 
-      date: appointment.date 
+      date: appointment.date,
+      key: appointment.key 
     }
   ));
 

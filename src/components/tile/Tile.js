@@ -2,7 +2,10 @@ import React from "react";
 import './tile.css';
 
 export const Tile = ({ data, showDetails }) => {
-  const tileData = Object.values(data);
+  const id = data.key;
+  const tileData = {...data};
+  delete tileData.key;
+  const tileOutput = Object.values(tileData);
 
   if (typeof data === 'string') {
     return (
@@ -13,9 +16,9 @@ export const Tile = ({ data, showDetails }) => {
   }
 
   return (
-    <div className="tile" onClick={() => showDetails(data.title)}>
+    <div className="tile" onClick={() => showDetails(id)}>
       {
-        tileData.map((element, index) => {
+        tileOutput.map((element, index) => {
           if (index === 0) {
             return <p key={index} className='tile-title'>{element}</p>
           }

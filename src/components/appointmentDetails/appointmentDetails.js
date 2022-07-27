@@ -29,13 +29,13 @@ export const AppointmentDetails = ({ appointmentDetails, handleDelete, handleEdi
             <div className='appointment-details-footer'>
                 <button 
                     className='appointment-details-button edit' 
-                    onClick={() => {handleEditAppointment(appointmentDetails.title)}}
+                    onClick={() => {handleEditAppointment(appointmentDetails.key)}}
                     >
                         Edit appointment
                 </button>
                 <button 
                     className='appointment-details-button delete' 
-                    onClick={() => {handleDelete(appointmentDetails.title)}}
+                    onClick={() => {handleDelete(appointmentDetails.key)}}
                     >
                         Delete appointment
                 </button>
