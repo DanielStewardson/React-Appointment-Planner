@@ -12,7 +12,7 @@ Manage a simple list of contacts and appointments.
 
 Future additions:
 
-- [] Condense code to make more re-usable components
+- [ ] Condense code to make more re-usable components
 - [] Add search contacts and appointment features
 - [] Add feature to enable adding a new contact whilst setting up appointment
 - [] Add keys to appointments for correct editing and deleting
