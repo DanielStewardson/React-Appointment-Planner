@@ -209,7 +209,7 @@ input[type="time"] {
   input,
   select {
    font-size: .9rem;
-   padding: .5rem .5rem .6rem .5rem;
+   /* padding: .5rem .5rem .6rem .5rem; */
   }
 }
 
