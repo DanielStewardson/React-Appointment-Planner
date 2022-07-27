@@ -16,7 +16,7 @@ Future additions:
 - [ ] Condense code to make more re-usable components
 - [ ] Add search contacts and appointment features
 - [ ] Add feature to enable adding a new contact whilst setting up appointment
-- [ ] Add keys to appointments for correct editing and deleting
+- [x] Add keys to appointments for correct editing and deleting
 - [ ] Add a date list/calender for finding saved appointments
 - [ ] Add database to save and retrieve data
 - [ ] Add login for personal data use
