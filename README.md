@@ -4,13 +4,14 @@
 
 App hosted using GH-Pages here - [React-Planner-App](https://DanielStewardson.github.io/React-Appointment-Planner)
 
-This is a React practice project to help develop my coding skills.
 
+This is a React practice project to help develop my coding skills.
 Manage a simple list of contacts and appointments.
 
 ---
 
-* Future additions
+Future additions:
+
 - [] Condense code to make more re-usable components
 - [] Add search contacts and appointment features
 - [] Add feature to enable adding a new contact whilst setting up appointment
