@@ -9,15 +9,12 @@
     margin-top: 2rem;
 }
 
-.footer-social-links {
-    /* position: absolute; */
-}
-
 .social-logo {
     width: 35px;
     margin: .2rem;
+    border-radius: 8px;
 }
 
 .social-logo:hover {
-    background-color: blue;
+    background-color: #03a8d8;
 }

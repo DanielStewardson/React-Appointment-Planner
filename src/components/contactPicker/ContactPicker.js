@@ -3,7 +3,7 @@ import React from "react";
 export const ContactPicker = ({ contacts, contact, setContact }) => {
   return (
     <>
-      <label htmlFor='contacts'>Contact:</label>
+      <label htmlFor='contacts'>Contact:</label><br/>
       <select id='contacts' value={contact} onChange={(e) => setContact(e.target.value)}>
         <option>Select contact details</option>
           {contacts.map((contact) => {
@@ -11,7 +11,7 @@ export const ContactPicker = ({ contacts, contact, setContact }) => {
               <option key={contact.name} value={contact.name}>{contact.name}</option>
             )
           })}
-      </select>
+      </select><br/>
     </>
   );
 };
