@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect, NavLink, useLocation } from "react-router-dom";
+import { Switch, Route,  NavLink, useLocation } from "react-router-dom";
 
 import HomePage from "./containers/homePage/HomePage";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
@@ -73,28 +73,32 @@ function App() {
       contact: 'Windsor Hallifax',
       date: '2022-06-20',
       time: '06:20',
-      notes: 'None yet'
+      notes: 'None yet',
+      key: '1'
     },
     {
       title: 'Walk the goldfish',
       contact: 'johnny boy',
       date: '2022-06-21',
       time: '06:20',
-      notes: 'None yet'
+      notes: 'None yet',
+      key: '2'
     },
     {
       title: 'Walk the iguana',
       contact: 'johnny boy',
       date: '2022-06-21',
       time: '06:20',
-      notes: 'None yet'
+      notes: 'None yet',
+      key: '3'
     },
     {
       title: 'Walk the panda bear',
       contact: 'Windsor Hallifax',
       date: '2022-06-22',
       time: '06:20',
-      notes: 'None yet'
+      notes: 'None yet',
+      key: '4'
     }
   ]);
 
@@ -128,9 +132,9 @@ function App() {
     setContacts(prev => [...prev, contact]);
   };
 
-  const editContact = (name, newName, newPhone, newEmail, newNotes) => {
+  const editContact = (editing, newName, newPhone, newEmail, newNotes) => {
     const current = contacts;
-    const contact = current.findIndex(contact => contact.name === name);
+    const contact = current.findIndex(contact => contact.name === editing);
     current[contact] = {
       name: newName,
       phone: newPhone,
@@ -145,32 +149,34 @@ function App() {
   }; 
 
   // ---------------------------------------------------- Appointment functions
-  const addAppointment = (title, contact, date, time, notes) => {
+  const addAppointment = (title, contact, date, time, notes, key) => {
     const appointment = {
       title: title,
       contact: contact,
       date: date,
       time: time,
-      notes: notes
+      notes: notes,
+      key: key
     };
     setAppointments(prev => [...prev, appointment].sort((a, b) => Number(new Date(a.date)) - Number(new Date(b.date))));
   };
 
-  const editAppointment = (title, newTitle, newContact, newDate, newTime, newNotes) => {
+  const editAppointment = (editing, newTitle, newContact, newDate, newTime, newNotes) => {
     const current = appointments;
-    const appointment = current.findIndex(appointment => appointment.title === title);
+    const appointment = current.findIndex(appointment => appointment.key === editing);
     current[appointment] = {
+      ...current[appointment],
       title: newTitle,
       contact: newContact,
       date: newDate,
       time: newTime,
       notes: newNotes
-    }
+    };
     setAppointments(current.sort((a, b) => Number(new Date(a.date)) - Number(new Date(b.date))));
   };
 
-  const removeAppointment = (name) => {
-    setAppointments(appointments.filter((appointment) => appointment.title !== name));
+  const removeAppointment = (key) => {
+    setAppointments(appointments.filter((appointment) => appointment.key !== key));
   }; 
 
   return (
