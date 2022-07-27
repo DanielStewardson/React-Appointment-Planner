@@ -1,6 +1,8 @@
 {
-  "name": "react-challenge",
+  "name": "react-appointment-planner",
   "version": "0.1.0",
+  "homepage": "https://https://danielstewardson.github.io/React-Appointment-Planner",
+  "author": "Daniel Stewardson (https://danielstewardson.com)",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -16,6 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,5 +42,6 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
