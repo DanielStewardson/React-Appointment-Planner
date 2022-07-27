@@ -8,10 +8,10 @@ const Footer = () => {
     return ( 
         <div className='footer-container'>
             <h4>Bodged by Dan</h4>
-            <div class="footer-social-links"> 
-                <a href="https://github.com/DanielStewardson" target="_blank" rel='noreferrer'><img class='social-logo' src={gitLogo} alt='G' /></a>
-                <a href='https://www.danielstewardson.com' target="_blank" rel='noreferrer'><img class='social-logo' alt='L' src={linkIn} /></a>
-                <a href='https://www.codecademy.com/profiles/DanielStewardson' target="_blank" rel='noreferrer'><img class='social-logo' alt='C' src={codeIcon} /></a>
+            <div className="footer-social-links"> 
+                <a href="https://github.com/DanielStewardson" target="_blank" rel='noreferrer'><img className='social-logo' src={gitLogo} alt='G' /></a>
+                <a href='https://www.danielstewardson.com' target="_blank" rel='noreferrer'><img className='social-logo' alt='L' src={linkIn} /></a>
+                <a href='https://www.codecademy.com/profiles/DanielStewardson' target="_blank" rel='noreferrer'><img className='social-logo' alt='C' src={codeIcon} /></a>
              </div> 
         </div>
      );
