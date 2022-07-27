@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/React-Appointment-Planner/static/css/main.094fa63c.chunk.css",
-    "main.js": "/React-Appointment-Planner/static/js/main.f0fdab9d.chunk.js",
-    "main.js.map": "/React-Appointment-Planner/static/js/main.f0fdab9d.chunk.js.map",
-    "runtime-main.js": "/React-Appointment-Planner/static/js/runtime-main.fa27c432.js",
-    "runtime-main.js.map": "/React-Appointment-Planner/static/js/runtime-main.fa27c432.js.map",
-    "static/js/2.498e5c46.chunk.js": "/React-Appointment-Planner/static/js/2.498e5c46.chunk.js",
-    "static/js/2.498e5c46.chunk.js.map": "/React-Appointment-Planner/static/js/2.498e5c46.chunk.js.map",
-    "index.html": "/React-Appointment-Planner/index.html",
-    "static/css/main.094fa63c.chunk.css.map": "/React-Appointment-Planner/static/css/main.094fa63c.chunk.css.map",
-    "static/js/2.498e5c46.chunk.js.LICENSE.txt": "/React-Appointment-Planner/static/js/2.498e5c46.chunk.js.LICENSE.txt"
+    "main.css": "//danielstewardson.github.io/React-Appointment-Planner/static/css/main.c6dff135.chunk.css",
+    "main.js": "//danielstewardson.github.io/React-Appointment-Planner/static/js/main.a1a0f1c8.chunk.js",
+    "main.js.map": "//danielstewardson.github.io/React-Appointment-Planner/static/js/main.a1a0f1c8.chunk.js.map",
+    "runtime-main.js": "//danielstewardson.github.io/React-Appointment-Planner/static/js/runtime-main.b8c0e0c1.js",
+    "runtime-main.js.map": "//danielstewardson.github.io/React-Appointment-Planner/static/js/runtime-main.b8c0e0c1.js.map",
+    "static/js/2.4c363d54.chunk.js": "//danielstewardson.github.io/React-Appointment-Planner/static/js/2.4c363d54.chunk.js",
+    "static/js/2.4c363d54.chunk.js.map": "//danielstewardson.github.io/React-Appointment-Planner/static/js/2.4c363d54.chunk.js.map",
+    "index.html": "//danielstewardson.github.io/React-Appointment-Planner/index.html",
+    "static/css/main.c6dff135.chunk.css.map": "//danielstewardson.github.io/React-Appointment-Planner/static/css/main.c6dff135.chunk.css.map",
+    "static/js/2.4c363d54.chunk.js.LICENSE.txt": "//danielstewardson.github.io/React-Appointment-Planner/static/js/2.4c363d54.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fa27c432.js",
-    "static/js/2.498e5c46.chunk.js",
-    "static/css/main.094fa63c.chunk.css",
-    "static/js/main.f0fdab9d.chunk.js"
+    "static/js/runtime-main.b8c0e0c1.js",
+    "static/js/2.4c363d54.chunk.js",
+    "static/css/main.c6dff135.chunk.css",
+    "static/js/main.a1a0f1c8.chunk.js"
   ]
 }
